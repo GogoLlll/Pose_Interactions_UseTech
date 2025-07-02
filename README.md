@@ -143,7 +143,7 @@ python main.py
 ## Используемые технологии
 - OpenCV  
 - PyTorch  
-- YOLOv8 (детектор) + YOLOv8-Pose (позы)  
+- YOLO12 (детектор) + YOLO11-Pose (позы)  
 - DeepSORT (через `deep_sort_realtime`)  
 - JSON, NumPy
 
