@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import numpy as np
 from config import keypoint_threshpoint, device
 
-yolo_pose = YOLO("yolo11x-pose.pt").to(device)
+yolo_pose = YOLO("weights/yolo11x-pose.pt").to(device)
 
 def get_pose_from_roi(roi):
     if roi.shape[0] < 30 or roi.shape[1] < 30:
