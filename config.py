@@ -1,7 +1,7 @@
 import torch
 
-input_video = 'input_videos/competition_1_3_xvid.avi'
-output_video = 'output_videos/testes_3_isolate.mp4'
+input_video = 'input_videos/shop_test.mp4'
+output_video = 'output_videos/yolo11test_unskelet.mp4'
 json_file = 'track_data.json'
 
 conf_threshold = 0.5

@@ -79,6 +79,15 @@ while cap.isOpened():
                 elif interaction["type"] == "hug":
                     label += " (Hug)"
                     cv2.line(frame, center1, center2, (255, 255, 0), 2)  # Голубая линия
+                elif interaction["type"] == "conversation":
+                    label += " (Conversation)"
+                    cv2.line(frame, center1, center2, (0, 255, 255), 2)  # Жёлтая линия
+                elif interaction["type"] == "wave":
+                    label += " (Wave)"
+                    cv2.line(frame, center1, center2, (255, 165, 0), 2)  # Оранжевая линия
+                elif interaction["type"] == "nod":
+                    label += " (Nod)"
+                    cv2.line(frame, center1, center2, (0, 255, 0), 2)  # Зелёная линия
 
         cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 

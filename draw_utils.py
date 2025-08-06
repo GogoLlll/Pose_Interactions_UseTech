@@ -9,9 +9,10 @@ pose_connect = [
 def draw_skeleton(frame, keypoints, offset_x=0, offset_y=0):
     for x, y in keypoints:
         if x != -1:
-            cv2.circle(frame, (x + offset_x, y + offset_y), 3, (0, 0, 255), -1)
+            cv2.circle(frame, (x + offset_x, y + offset_y), 3, (0, 0, 0), -1)
     for start, end in pose_connect:
         if keypoints[start] != [-1, -1] and keypoints[end] != [-1, -1]:
             p1 = (keypoints[start][0] + offset_x, keypoints[start][1] + offset_y)
             p2 = (keypoints[end][0] + offset_x, keypoints[end][1] + offset_y)
-            cv2.line(frame, p1, p2, (255, 0, 0), 2)
+            cv2.line(frame, p1, p2, (0, 0, 0), 2)
+
