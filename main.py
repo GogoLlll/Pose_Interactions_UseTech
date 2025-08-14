@@ -54,10 +54,8 @@ while cap.isOpened():
             "flags": {}
         })
 
-    # Анализ парного взаимодействия с передачей frame_idx
     interactions = analyze_behavior(current_tracks, width, height, frame_idx)
 
-    # Отображение
     for track in current_tracks:
         track_id = track["id"]
         x1, y1, x2, y2 = track["bbox"]
@@ -75,19 +73,19 @@ while cap.isOpened():
 
                 if interaction["type"] == "handshake":
                     label += " (Handshake)"
-                    cv2.line(frame, center1, center2, (255, 0, 255), 2)  # Розовая линия
+                    cv2.line(frame, center1, center2, (255, 0, 255), 2)
                 elif interaction["type"] == "hug":
                     label += " (Hug)"
-                    cv2.line(frame, center1, center2, (255, 255, 0), 2)  # Голубая линия
+                    cv2.line(frame, center1, center2, (255, 255, 0), 2)
                 elif interaction["type"] == "conversation":
                     label += " (Conversation)"
-                    cv2.line(frame, center1, center2, (0, 255, 255), 2)  # Жёлтая линия
+                    cv2.line(frame, center1, center2, (0, 255, 255), 2)
                 elif interaction["type"] == "wave":
                     label += " (Wave)"
-                    cv2.line(frame, center1, center2, (255, 165, 0), 2)  # Оранжевая линия
+                    cv2.line(frame, center1, center2, (255, 165, 0), 2) 
                 elif interaction["type"] == "nod":
                     label += " (Nod)"
-                    cv2.line(frame, center1, center2, (0, 255, 0), 2)  # Зелёная линия
+                    cv2.line(frame, center1, center2, (0, 255, 0), 2)
 
         cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
